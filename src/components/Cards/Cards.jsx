@@ -34,7 +34,7 @@ export const Cards = (props) => {
             <Typography color='textSecondary'>
               {new Date(data.lastUpdate).toDateString()}
             </Typography>
-            <Typography variant='body2'>COVID-19: Active Cases </Typography>
+            <Typography variant='body2'>Number of Active Cases </Typography>
           </CardContent>
         </Grid>
 
