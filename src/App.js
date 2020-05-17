@@ -4,27 +4,39 @@ import { Cards } from './components/Cards/Cards';
 import { CountryPicker } from './components/CountryPicker/CountryPicker';
 import { Chart } from './components/Chart/Chart';
 import { fetchData } from './api';
+import logo from './image/image.png'
 
 function App() {
-  const [ data, setData ] = useState(null)
+  const [ data, setData ] = useState(null);
+  const [ countryPicked, setCountryPicked ] = useState('')
 
   useEffect(() => {
     async function fetchAPI() {
-      let data = await fetchData()
+      const data = await fetchData()
       // response = await response.json()
       setData(data) 
-      
+
     }
     fetchAPI()
   }, [])
 
-  // console.log(data)
+  
+
+  const handleCountryChange = async (country) => {
+    const countryPicked = await fetchData(country)
+    setCountryPicked(country)
+    setData(countryPicked)
+
+  }
+
 
   return (
     <div className={styles.container}>
+      <img className={styles.image} src={logo} alt='logo' />
+      <CountryPicker handleCountryChange={handleCountryChange} />
       <Cards data={data} />
-      <CountryPicker />
-      <Chart />
+      
+      <Chart data={data} countryPicked={countryPicked} />
     </div>
   );
 }

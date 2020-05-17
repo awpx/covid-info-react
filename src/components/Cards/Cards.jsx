@@ -5,9 +5,11 @@ import CountUp from 'react-countup';
 import cx from 'classnames';
 
 export const Cards = (props) => {
+
   if(!props.data) {
     return 'loading...'
   }
+
 
   const data = {
     confirmed: props.data.confirmed.value,
@@ -19,7 +21,7 @@ export const Cards = (props) => {
 
 	return (
 		<div className={styles.container}>
-			<Grid container spacing={4} justify='center'>
+		<Grid container spacing={4} justify='center'>
         <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected)}>
           <CardContent>
             <Typography color='textSecondary' gutterBottom>Infected</Typography>
