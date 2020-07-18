@@ -1,3 +1,8 @@
+# Simple COVID-19 Information app using react and covid API
+
+Live Demo [Click Here](https://awp-covid-info.herokuapp.com/)
+--------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
